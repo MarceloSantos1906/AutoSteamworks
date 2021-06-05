@@ -8,13 +8,13 @@ namespace AutoSteamApp.Core
     public static class Settings
     {
         #region magic numbers
-        public static string SupportedGameVersion = "421470";
+        public static string SupportedGameVersion = "421740";
 
         public static ulong Off_Base = 0x140000000;
-        public static ulong Off_SteamworksCombo = 0x4FE79C0;
+        public static ulong Off_SteamworksCombo = 0x4F859F0;
 
-        public static ulong Off_SaveData = 0x5073E80;
-        public static ulong Off_DiffSlot = 0x27E9F0; // start of each save slot data slotnr * off
+        public static ulong Off_SaveData = 0x5011710;
+        public static ulong Off_DiffSlot = 0x416D040; // start of each save slot data slotnr * off
         #endregion
 
         private static uint _DelayBetweenCombo = 500;
@@ -112,12 +112,12 @@ namespace AutoSteamApp.Core
 
                 if (ConfigurationManager.AppSettings.AllKeys.Any(key => key == "keyCodeStart"))
                 {
-                    if (int.TryParse(ConfigurationManager.AppSettings["keyCodeStart"].Trim(), out _keyCodeStart)) 
+                    if (int.TryParse(ConfigurationManager.AppSettings["keyCodeStart"].Trim(), out _keyCodeStart))
                     {
                         try
                         {
                             KeyCode key = (KeyCode)_keyCodeStart;
-                            
+
                             return _keyCodeStart;
                         }
                         catch (Exception ex)
@@ -178,7 +178,7 @@ namespace AutoSteamApp.Core
 
                 if (ConfigurationManager.AppSettings.AllKeys.Any(key => key == "keyCodeStop"))
                 {
-                    if(int.TryParse(ConfigurationManager.AppSettings["keyCodeStop"].Trim(), out _keyCodeStop))
+                    if (int.TryParse(ConfigurationManager.AppSettings["keyCodeStop"].Trim(), out _keyCodeStop))
                     {
                         try
                         {
@@ -200,7 +200,7 @@ namespace AutoSteamApp.Core
                 return (_keyCodeStop = 27);
             }
         }
-        
+
         private static int _keyCutsceneSkip = -1;
         public static int KeyCutsceneSkip
         {
