@@ -50,7 +50,10 @@ Open Source code for you to make it better if you want: [Code might not be stabl
 Please use the Github page to ask for features, it is easier to track.
 
 ﻿#Contributors & Credits:
-﻿
+
+Marcus101RR
+- Helped me find pointer address to the save
+ 
 Geobryn﻿ 
 - Made it 100% accurate without writing memory
 ﻿﻿- Added CutsceneSkip functionality
